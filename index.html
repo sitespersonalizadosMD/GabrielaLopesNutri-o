@@ -1,0 +1,1027 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#702536">
+  <meta name="description" content="Gabriela Lopes, nutricionista clínica e metabólica. Acompanhamento nutricional presencial e online, com cuidado individualizado em todas as fases da vida.">
+  <meta property="og:title" content="Gabriela Lopes | Nutrição Clínica e Metabólica">
+  <meta property="og:description" content="Nutrição que respeita sua história, sua rotina e cada fase da sua vida.">
+  <title>Gabriela Lopes | Nutrição Clínica e Metabólica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --nude: #f3e7da;
+      --paper: #fbf7f1;
+      --brown: #76513b;
+      --dark: #38251f;
+      --marsala: #702536;
+      --rose: #9a5960;
+      --line: #d9c7b6;
+      --white: #fffdf9;
+      --shadow: 0 22px 65px rgba(63,37,29,.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--dark);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 44px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      color: var(--brown);
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      line-height: 1.13;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 5.4vw, 5.15rem);
+      letter-spacing: -.04em;
+      margin: .7rem 0 1.2rem;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      letter-spacing: -.025em;
+      margin: .65rem 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: .6rem 0;
+    }
+
+    .muted { color: #76645a; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--marsala);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--marsala);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px #7025362b;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--marsala);
+    }
+
+    .topbar {
+      background: var(--marsala);
+      color: #fff7f0;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: .78rem;
+      letter-spacing: .04em;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fbf7f1ed;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #e7d9cc;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 86px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.16rem;
+      letter-spacing: .05em;
+      color: var(--marsala);
+      line-height: 1.15;
+    }
+
+    .brand-sub {
+      font-size: .61rem;
+      letter-spacing: .14em;
+      color: var(--brown);
+      text-transform: uppercase;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .88rem;
+      color: #58443a;
+    }
+
+    .navlinks a:hover { color: var(--marsala); }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--marsala);
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    /* APRESENTAÇÃO PRINCIPAL */
+
+    .hero {
+      padding: 70px 0 86px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 15%, #e8d2bf 0, transparent 34%),
+        linear-gradient(120deg, #f5e9dc, #fbf7f1 65%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .hero-copy { padding: 22px 0; }
+
+    .hero-copy p {
+      max-width: 550px;
+      font-size: 1.08rem;
+      color: #6d5a4e;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    .microtrust {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #6e5a4c;
+      font-size: .82rem;
+    }
+
+    .microtrust span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-photo {
+      position: relative;
+      max-width: 490px;
+      justify-self: end;
+      width: 100%;
+    }
+
+    .hero-photo:before {
+      content: "";
+      position: absolute;
+      inset: 24px -18px -18px 24px;
+      border: 1px solid #b58b75;
+      border-radius: 48% 48% 18px 18px;
+      transform: rotate(2deg);
+    }
+
+    .hero-photo img {
+      position: relative;
+      width: 100%;
+      height: 610px;
+      object-fit: cover;
+      object-position: center 24%;
+      border-radius: 48% 48% 18px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-note {
+      position: absolute;
+      left: -28px;
+      bottom: 30px;
+      background: var(--white);
+      padding: 16px 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      max-width: 220px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.08rem;
+      color: var(--marsala);
+    }
+
+    /* SEÇÕES */
+
+    .section { padding: 94px 0; }
+
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-head p { color: #76645a; }
+
+    /* ÁREAS DE ATUAÇÃO */
+
+    .areas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .area-card {
+      background: #fffdf9;
+      border: 1px solid #eaded2;
+      border-radius: 18px;
+      padding: 27px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .area-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .area-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--nude);
+      color: var(--marsala);
+      font-size: 1.3rem;
+    }
+
+    .area-card p {
+      color: #76645a;
+      font-size: .94rem;
+      margin-bottom: 0;
+    }
+
+    /* SOBRE A NUTRICIONISTA */
+
+    .about { background: #efe0d2; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-image { position: relative; }
+
+    .about-image img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p { color: #6c594e; }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .credential {
+      padding: 17px;
+      border-left: 2px solid var(--marsala);
+      background: #fbf7f180;
+    }
+
+    .credential strong {
+      display: block;
+      color: var(--marsala);
+      font-size: .9rem;
+    }
+
+    .credential span {
+      font-size: .82rem;
+      color: #76645a;
+    }
+
+    /* ETAPAS DO ACOMPANHAMENTO */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      padding: 28px;
+      border: 1px solid #e6d7ca;
+      border-radius: 18px;
+      background: #fffdf9;
+    }
+
+    .step:before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: block;
+      color: var(--rose);
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+    }
+
+    .step p {
+      color: #76645a;
+      font-size: .94rem;
+    }
+
+    /* CHAMADA PARA AÇÃO */
+
+    .quote-band {
+      background: var(--marsala);
+      color: #fff7f0;
+      padding: 66px 0;
+      text-align: center;
+    }
+
+    .quote-band h2 {
+      max-width: 820px;
+      margin: 0 auto 18px;
+    }
+
+    .quote-band p { color: #f0dcd5; }
+
+    /* CONTATO */
+
+    .contact { background: #f5eadd; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-panel {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px solid #eee2d7;
+    }
+
+    .contact-line:last-child { border: 0; }
+
+    .contact-line b {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .contact-line span {
+      font-size: .9rem;
+      color: #76645a;
+    }
+
+    /* RODAPÉ */
+
+    .footer {
+      background: #30211d;
+      color: #f9eee5;
+      padding: 36px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer small { color: #cdb9ac; }
+
+    .footer .brand-name { color: #f9e9df; }
+    .footer .brand-sub { color: #d5bba7; }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-size: .86rem;
+    }
+
+    /* BOTÃO FIXO WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 20;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #287c55;
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 28px #0003;
+      font-size: 1.6rem;
+    }
+
+    /* ANIMAÇÕES */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .disclaimer {
+      font-size: .78rem;
+      color: #8d7b6f;
+    }
+
+    .mobile-cta { display: none; }
+
+    /* TABLETS */
+
+    @media (max-width: 900px) {
+      .hero-grid { gap: 32px; }
+      .hero-photo img { height: 510px; }
+      .navlinks { gap: 14px; }
+      .about-grid { gap: 35px; }
+      .areas { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* CELULARES */
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 32px, 540px);
+      }
+
+      .nav { min-height: 72px; }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .brand-name { font-size: 1rem; }
+      .brand-sub { font-size: .52rem; }
+
+      .menu-toggle { display: block; }
+
+      .navlinks {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: var(--paper);
+        padding: 20px 24px 26px;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .navlinks.open { display: flex; }
+      .navlinks .btn { width: 100%; }
+      .nav > .btn { display: none; }
+
+      .hero { padding: 40px 0 58px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .hero-copy { padding: 0; }
+      .hero-copy p { font-size: 1rem; }
+
+      .hero-photo {
+        justify-self: center;
+        max-width: 420px;
+        width: 88%;
+      }
+
+      .hero-photo img { height: 470px; }
+
+      .photo-note {
+        left: -16px;
+        bottom: 20px;
+        font-size: .96rem;
+        padding: 13px 15px;
+      }
+
+      .section { padding: 65px 0; }
+
+      .areas, .steps { grid-template-columns: 1fr; }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .about-image img { height: 430px; }
+
+      .credentials { grid-template-columns: 1fr; }
+
+      .section-head { margin-bottom: 30px; }
+      .quote-band { padding: 54px 0; }
+      .contact-panel { padding: 24px; }
+
+      .footer-grid {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+        width: 54px;
+        height: 54px;
+      }
+
+      .mobile-cta {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        background: #fbf7f1f2;
+        backdrop-filter: blur(12px);
+        z-index: 15;
+        border-top: 1px solid var(--line);
+      }
+
+      .mobile-cta .btn { width: 100%; }
+
+      body { padding-bottom: 76px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    Atendimento presencial e online · Agendamentos de terça a sábado
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+
+      <a class="brand" href="#inicio" aria-label="Gabriela Lopes - início">
+        <img src="assets/logo-gabriela.png" alt="Logo Gabriela Lopes">
+        <span>
+          <span class="brand-name">GABRIELA LOPES</span><br>
+          <span class="brand-sub">Nutrição Clínica e Metabólica</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">☰</button>
+
+      <nav class="navlinks" id="navlinks" aria-label="Navegação principal">
+        <a href="#atuacao">Áreas de atuação</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#acompanhamento">Acompanhamento</a>
+        <a href="#contato">Contato</a>
+        <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+      </nav>
+
+      <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL -->
+
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Cuidado individualizado em cada fase da vida</div>
+
+          <h1>Nutrição que respeita sua história, sua rotina e você.</h1>
+
+          <p>
+            Um acompanhamento nutricional pensado para suas necessidades,
+            seus objetivos e sua qualidade de vida — com acolhimento,
+            ciência e escolhas possíveis para o dia a dia.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+              ♡ &nbsp; Quero agendar
+            </a>
+
+            <a class="btn secondary" href="#atuacao">
+              Conheça o atendimento ↓
+            </a>
+          </div>
+
+          <div class="microtrust">
+            <span>✦ Atendimento presencial e online</span>
+            <span>✦ Consulta mediante agendamento</span>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal">
+          <img src="assets/foto-gabriela-1.jpeg" alt="Gabriela Lopes, nutricionista" fetchpriority="high">
+          <div class="photo-note">Mais saúde, com acolhimento e individualidade.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+
+    <section class="section" id="atuacao">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">Como posso ajudar</div>
+          <h2>Cuidado nutricional para diferentes momentos da vida.</h2>
+          <p>
+            Cada pessoa tem uma história, uma rotina e necessidades próprias.
+            O acompanhamento começa com escuta e avaliação individualizada.
+          </p>
+        </div>
+
+        <div class="areas">
+
+          <article class="area-card reveal">
+            <div class="area-icon">✧</div>
+            <h3>Nutrição clínica</h3>
+            <p>Acompanhamento nutricional individualizado, considerando necessidades, hábitos, preferências e objetivos de saúde.</p>
+          </article>
+
+          <article class="area-card reveal">
+            <div class="area-icon">❧</div>
+            <h3>Emagrecimento</h3>
+            <p>Orientação nutricional com foco em hábitos sustentáveis e estratégias compatíveis com a rotina de cada pessoa.</p>
+          </article>
+
+          <article class="area-card reveal">
+            <div class="area-icon">♡</div>
+            <h3>Saúde da mulher</h3>
+            <p>Cuidado nutricional atento às necessidades e às diferentes fases da vida da mulher.</p>
+          </article>
+
+          <article class="area-card reveal">
+            <div class="area-icon">⌂</div>
+            <h3>Gestantes e tentantes</h3>
+            <p>Orientação nutricional individualizada para esse período, de acordo com as necessidades de cada paciente.</p>
+          </article>
+
+          <article class="area-card reveal">
+            <div class="area-icon">❀</div>
+            <h3>Geriatria</h3>
+            <p>Atenção às necessidades nutricionais e à qualidade de vida no envelhecimento.</p>
+          </article>
+
+          <article class="area-card reveal">
+            <div class="area-icon">◌</div>
+            <h3>Saúde metabólica</h3>
+            <p>Acompanhamento nutricional voltado à saúde metabólica, alinhado à avaliação e aos objetivos individuais.</p>
+          </article>
+
+        </div>
+
+        <p class="disclaimer" style="text-align:center;margin-top:22px">
+          Os atendimentos e condutas são definidos após avaliação individual.
+          Quando necessário, o cuidado nutricional deve ocorrer em integração
+          com a equipe de saúde.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SOBRE A GABRIELA -->
+
+    <section class="section about" id="sobre">
+      <div class="container about-grid">
+
+        <div class="about-image reveal">
+          <img src="assets/foto-gabriela-2.jpeg" alt="Gabriela Lopes em fotografia profissional" loading="lazy">
+        </div>
+
+        <div class="about-copy reveal">
+          <div class="eyebrow">Prazer, sou Gabriela</div>
+          <h2>Ciência, escuta e cuidado em cada escolha.</h2>
+
+          <p>
+            Sou nutricionista, com formação em Nutrição Clínica e Metabolismo.
+            Acredito que o cuidado nutricional deve considerar a individualidade,
+            a rotina e as necessidades de cada pessoa.
+          </p>
+
+          <p>
+            Minha trajetória inclui experiência em ambiente hospitalar,
+            avaliação nutricional, educação alimentar, elaboração de planos
+            individualizados e atuação com qualidade e segurança dos alimentos.
+            Busco atualização profissional contínua e um cuidado centrado no paciente.
+          </p>
+
+          <div class="credentials">
+            <div class="credential">
+              <strong>Bacharelado em Nutrição</strong>
+              <span>Universidade Estácio de Sá · 2019–2022</span>
+            </div>
+
+            <div class="credential">
+              <strong>Nutrição Clínica e Metabolismo</strong>
+              <span>Pós-graduação · Nutmed · 2024–2026</span>
+            </div>
+          </div>
+
+          <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20conhecer%20seu%20acompanhamento." target="_blank" rel="noopener">
+            Vamos conversar
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+
+    <section class="section" id="acompanhamento">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">Seu acompanhamento</div>
+          <h2>Um processo pensado para você.</h2>
+          <p>
+            O cuidado começa com uma conversa e evolui de acordo com
+            a avaliação e as necessidades identificadas.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <article class="step reveal">
+            <h3>Escuta e avaliação</h3>
+            <p>Conversamos sobre sua rotina, histórico, preferências, dificuldades e objetivos.</p>
+          </article>
+
+          <article class="step reveal">
+            <h3>Plano individualizado</h3>
+            <p>As orientações nutricionais são elaboradas considerando suas necessidades e possibilidades reais.</p>
+          </article>
+
+          <article class="step reveal">
+            <h3>Acompanhamento</h3>
+            <p>O cuidado pode ser revisto ao longo do tempo, conforme a evolução e as necessidades de cada pessoa.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA AÇÃO -->
+
+    <section class="quote-band">
+      <div class="container reveal">
+        <div class="eyebrow" style="color:#e6c9b8">Um convite ao cuidado</div>
+
+        <h2>Pequenas escolhas, orientação individualizada e cuidado contínuo.</h2>
+
+        <p>Seu próximo passo pode começar com uma conversa.</p>
+
+        <a class="btn" style="background:#fff7f0;color:var(--marsala);border-color:#fff7f0" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Quero%20saber%20mais%20sobre%20as%20consultas." target="_blank" rel="noopener">
+          Fale comigo pelo WhatsApp ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="section contact" id="contato">
+      <div class="container contact-grid">
+
+        <div class="reveal">
+          <div class="eyebrow">Entre em contato</div>
+          <h2>Vamos conversar sobre seu cuidado nutricional?</h2>
+
+          <p class="muted">
+            Consulte valores, disponibilidade e modalidade de atendimento
+            diretamente com a Gabriela.
+          </p>
+
+          <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20consultar%20valores%20e%20disponibilidade." target="_blank" rel="noopener">
+            Consultar agenda e valores ↗
+          </a>
+        </div>
+
+        <div class="contact-panel reveal">
+
+          <div class="contact-line">
+            <span>◷</span>
+            <div>
+              <b>Disponibilidade</b>
+              <span>Terça-feira a sábado, mediante consulta à agenda.</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <span>◎</span>
+            <div>
+              <b>Modalidade</b>
+              <span>Atendimento presencial e online.</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <span>☏</span>
+            <div>
+              <b>WhatsApp</b>
+              <span>(21) 99049-1428</span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <span>◎</span>
+            <div>
+              <b>Instagram</b>
+              <span>
+                <a href="https://instagram.com/gabilopes.nutricionista" target="_blank" rel="noopener">
+                  @gabilopes.nutricionista ↗
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <span>✦</span>
+            <div>
+              <b>Registro profissional</b>
+              <span>CRN-4 23101194</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer class="footer">
+    <div class="container footer-grid">
+
+      <div class="brand">
+        <img src="assets/logo-gabriela.png" alt="" loading="lazy">
+        <span>
+          <span class="brand-name">GABRIELA LOPES</span><br>
+          <span class="brand-sub">Nutrição Clínica e Metabólica</span>
+        </span>
+      </div>
+
+      <div>
+        <small>CRN-4 23101194 · Atendimento presencial e online</small><br>
+        <small>© <span id="year"></span> Gabriela Lopes. Todos os direitos reservados.</small>
+      </div>
+
+      <div class="footer-links">
+        <a href="#inicio">Início ↑</a>
+        <a href="https://instagram.com/gabilopes.nutricionista" target="_blank" rel="noopener">Instagram</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a class="whatsapp-float" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Conversar com Gabriela pelo WhatsApp">
+    ◔
+  </a>
+
+  <!-- BOTÃO FIXO PARA CELULAR -->
+
+  <div class="mobile-cta">
+    <a class="btn" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+      Agendar pelo WhatsApp ↗
+    </a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('navlinks');
+
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
