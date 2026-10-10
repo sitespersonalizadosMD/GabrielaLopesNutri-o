@@ -185,6 +185,34 @@
       cursor: pointer;
     }
 
+    
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.instagram-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--marsala);
+  font-size: 1.65rem;
+  transition: transform .2s, color .2s;
+}
+
+.instagram-header:hover {
+  color: var(--rose);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 681px) {
+  .header-actions {
+    display: none;
+  }
+}
+
+
     /* APRESENTAÇÃO PRINCIPAL */
 
     .hero {
@@ -664,7 +692,26 @@
         </span>
       </a>
 
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">☰</button>
+
+<div class="header-actions">
+  <a
+    class="instagram-header"
+    href="https://instagram.com/gabilopes.nutricionista"
+    target="_blank"
+    rel="noopener"
+    aria-label="Instagram da Gabriela Lopes"
+  >
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <button
+    class="menu-toggle"
+    aria-label="Abrir menu"
+    aria-expanded="false"
+    id="menuToggle"
+  >☰</button>
+</div>
+
 
       <nav class="navlinks" id="navlinks" aria-label="Navegação principal">
         <a href="#atuacao">Áreas de atuação</a>
