@@ -445,6 +445,92 @@
       font-size: .94rem;
     }
 
+    
+/* AVALIAÇÕES DE PACIENTES */
+
+.reviews {
+  background: var(--white);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.review-card {
+  background: var(--paper);
+  border: 1px solid #eaded2;
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(63, 37, 29, .05);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.review-stars {
+  color: #d99a16;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.review-card p {
+  color: #65534a;
+  font-size: .96rem;
+  line-height: 1.8;
+  margin: 0 0 22px;
+  flex: 1;
+}
+
+.review-author {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.review-author strong {
+  display: block;
+  color: var(--marsala);
+  font-size: 1rem;
+}
+
+.review-author span {
+  color: #847166;
+  font-size: .82rem;
+}
+
+.reviews-action {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.reviews-action p {
+  color: #76645a;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 680px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .review-card {
+    padding: 23px;
+  }
+
+  .reviews-action .btn {
+    width: 100%;
+  }
+}
+
+
     /* CHAMADA PARA AÇÃO */
 
     .quote-band {
