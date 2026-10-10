@@ -504,7 +504,121 @@
     
 
 
+/* RODAPÉ ORGANIZADO — MARSALA */
+
 .footer {
+  background: #702536;
+  color: #fffdf9;
+  padding: 38px 0 18px;
+  border-top: 1px solid #9a5960;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 26px;
+}
+
+.footer .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.footer .brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.footer .brand-name {
+  color: #fffdf9;
+}
+
+.footer .brand-sub {
+  color: #f3e7da;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-info small {
+  color: #f3e7da;
+  font-size: .85rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fffdf9;
+  font-size: .9rem;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+
+.footer-links a:hover {
+  color: #e8c9b9;
+}
+
+.footer-links i {
+  font-size: 1.15rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 253, 249, .22);
+  padding-top: 16px;
+  text-align: center;
+  color: #f3e7da;
+  font-size: .82rem;
+}
+
+@media (max-width: 680px) {
+  .footer {
+    padding: 30px 0 18px;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 22px;
+  }
+
+  .footer .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .footer-info {
+    gap: 4px;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+
+  .footer-bottom {
+    text-align: left;
+    line-height: 1.7;
+  }
+}
   background: #702536;
   color: #fffdf9;
   padding: 36px 0;
@@ -1037,29 +1151,45 @@
 
   <!-- RODAPÉ -->
 
-  <footer class="footer">
-    <div class="container footer-grid">
+<footer class="footer">
+  <div class="container footer-grid">
 
-      <div class="brand">
-        <img src="assets/logogabi.png" alt="" loading="lazy">
-        <span>
-          <span class="brand-name">GABRIELA LOPES</span><br>
-          <span class="brand-sub">Nutrição Clínica e Metabólica</span>
-        </span>
-      </div>
+    <a class="brand" href="#inicio" aria-label="Gabriela Lopes - início">
+      <img src="assets/logogabi.png" alt="Logo Gabriela Lopes" loading="lazy">
+      <span>
+        <span class="brand-name">GABRIELA LOPES</span><br>
+        <span class="brand-sub">Nutrição Clínica e Metabólica</span>
+      </span>
+    </a>
 
-      <div>
-        <small>CRN-4 23101194 · Atendimento presencial e online</small><br>
-        <small>© <span id="year"></span> Gabriela Lopes. Todos os direitos reservados.</small>
-      </div>
-
-      <div class="footer-links">
-        <a href="#inicio">Início ↑</a>
-        <a href="https://instagram.com/gabilopes.nutricionista" target="_blank" rel="noopener">Instagram</a>
-      </div>
-
+    <div class="footer-info">
+      <small><strong>CRN-4 23101194</strong></small>
+      <small>Atendimento presencial e online</small>
     </div>
-  </footer>
+
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="#inicio">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        Início
+      </a>
+
+      <a
+        href="https://instagram.com/gabilopes.nutricionista"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram da Gabriela Lopes"
+      >
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        Instagram
+      </a>
+    </nav>
+
+  </div>
+
+  <div class="container footer-bottom">
+    © <span id="year"></span> Gabriela Lopes. Todos os direitos reservados.
+  </div>
+</footer>
 
   <!-- WHATSAPP FLUTUANTE -->
 
