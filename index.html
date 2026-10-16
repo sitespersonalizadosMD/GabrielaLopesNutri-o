@@ -367,6 +367,92 @@
       margin-bottom: 0;
     }
 
+    
+/* LOCALIZE O CONSULTÓRIO MAIS PRÓXIMO */
+
+.cep-section {
+  background: #f3e7da;
+}
+
+.cep-box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px;
+  background: #fffdf9;
+  border: 1px solid #e5d3c3;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.cep-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cep-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 18px;
+  border: 1px solid #d9c7b6;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--dark);
+  font: inherit;
+}
+
+.cep-form input:focus {
+  outline: 2px solid var(--rose);
+  outline-offset: 2px;
+}
+
+.cep-result {
+  margin-top: 22px;
+}
+
+.cep-result-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--paper);
+  border: 1px solid #e5d3c3;
+}
+
+.cep-result-card h3 {
+  color: var(--marsala);
+}
+
+.cep-distance {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--marsala);
+}
+
+.cep-error {
+  color: #a12635;
+  margin-top: 14px;
+}
+
+.cep-note {
+  font-size: .82rem;
+  color: #76645a;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .cep-box {
+    padding: 22px;
+  }
+
+  .cep-form {
+    flex-direction: column;
+  }
+
+  .cep-form .btn {
+    width: 100%;
+  }
+}
+
+
     /* SOBRE A NUTRICIONISTA */
 
     .about { background: #efe0d2; }
@@ -1068,6 +1154,48 @@
       </div>
     </section>
 
+    
+    <!-- CONSULTÓRIO MAIS PRÓXIMO -->
+    <section class="section cep-section" id="consultorio">
+      <div class="container">
+        <div class="cep-box reveal">
+          <div class="section-head" style="margin-bottom:20px">
+            <div class="eyebrow">Atendimento presencial</div>
+            <h2>Qual consultório fica mais perto de você?</h2>
+            <p>
+              Digite seu CEP para descobrir qual unidade fica
+              geograficamente mais próxima e consultar o endereço.
+            </p>
+          </div>
+
+          <form class="cep-form" id="cepForm">
+            <input
+              id="cepInput"
+              type="text"
+              inputmode="numeric"
+              autocomplete="postal-code"
+              maxlength="9"
+              placeholder="Digite seu CEP (ex.: 21351-050)"
+              aria-label="Digite seu CEP"
+              required
+            >
+            <button class="btn" type="submit" id="cepButton">
+              Encontrar unidade
+            </button>
+          </form>
+
+          <div class="cep-result" id="cepResult" aria-live="polite"></div>
+
+          <p class="cep-note">
+            A distância exibida é uma estimativa em linha reta,
+            calculada a partir da localização aproximada do CEP.
+            Consulte o Google Maps para verificar a rota real.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- SOBRE A GABRIELA -->
 
     <section class="section about" id="sobre">
@@ -1397,6 +1525,167 @@
 <a class="whatsapp-float" href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Conversar com Gabriela pelo WhatsApp">
   <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
+
+  
+    // BUSCA DO CONSULTÓRIO MAIS PRÓXIMO
+
+    const cepForm = document.getElementById("cepForm");
+    const cepInput = document.getElementById("cepInput");
+    const cepResult = document.getElementById("cepResult");
+    const cepButton = document.getElementById("cepButton");
+
+    const unidades = [
+      {
+        nome: "Madureira 1",
+        endereco: "Estrada do Portela, 99, sala 625, 6º andar, Madureira, Rio de Janeiro - RJ, 21351-050",
+        lat: -22.87219,
+        lon: -43.33972
+      },
+      {
+        nome: "Madureira 2",
+        endereco: "Rua Antônio de Abreu, 80, sala 501, Madureira Office Park, Madureira, Rio de Janeiro - RJ",
+        lat: -22.8715,
+        lon: -43.3375
+      },
+      {
+        nome: "Botafogo",
+        endereco: "Rua Voluntários da Pátria, 45, Botafogo, Rio de Janeiro - RJ",
+        lat: -22.9512,
+        lon: -43.1840
+      },
+      {
+        nome: "Barra da Tijuca",
+        endereco: "Avenida Embaixador Abelardo Bueno, 1, Barra da Tijuca / Barra Olímpica, Rio de Janeiro - RJ, 22775-040",
+        lat: -22.9735,
+        lon: -43.39061
+      }
+    ];
+
+    function distanciaKm(lat1, lon1, lat2, lon2) {
+      const rad = graus => graus * Math.PI / 180;
+      const dLat = rad(lat2 - lat1);
+      const dLon = rad(lon2 - lon1);
+
+      const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(rad(lat1)) *
+        Math.cos(rad(lat2)) *
+        Math.sin(dLon / 2) ** 2;
+
+      return 6371 * 2 * Math.atan2(
+        Math.sqrt(a),
+        Math.sqrt(1 - a)
+      );
+    }
+
+    cepInput.addEventListener("input", () => {
+      let cep = cepInput.value.replace(/\D/g, "").slice(0, 8);
+      if (cep.length > 5) {
+        cep = cep.slice(0, 5) + "-" + cep.slice(5);
+      }
+      cepInput.value = cep;
+    });
+
+    cepForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      const cep = cepInput.value.replace(/\D/g, "");
+
+      if (cep.length !== 8) {
+        cepResult.innerHTML =
+          '<p class="cep-error">Digite um CEP válido com 8 números.</p>';
+        return;
+      }
+
+      cepButton.disabled = true;
+      cepButton.textContent = "Buscando...";
+      cepResult.textContent = "";
+
+      try {
+        const respostaCep = await fetch(
+          `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        if (!respostaCep.ok) throw new Error("cep");
+
+        const dadosCep = await respostaCep.json();
+
+        if (dadosCep.erro) {
+          throw new Error("cep");
+        }
+
+        const enderecoBusca = [
+          dadosCep.logradouro,
+          dadosCep.bairro,
+          dadosCep.localidade,
+          dadosCep.uf,
+          cep
+        ].filter(Boolean).join(", ");
+
+        const respostaMapa = await fetch(
+          "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=" +
+          encodeURIComponent(enderecoBusca)
+        );
+
+        if (!respostaMapa.ok) throw new Error("mapa");
+
+        const locais = await respostaMapa.json();
+
+        if (!locais.length) {
+          throw new Error("local");
+        }
+
+        const lat = Number(locais[0].lat);
+        const lon = Number(locais[0].lon);
+
+        const ranking = unidades
+          .map(unidade => ({
+            ...unidade,
+            distancia: distanciaKm(
+              lat, lon, unidade.lat, unidade.lon
+            )
+          }))
+          .sort((a, b) => a.distancia - b.distancia);
+
+        const maisProxima = ranking[0];
+
+        const rota = "https://www.google.com/maps/dir/?api=1&origin=" +
+          encodeURIComponent(enderecoBusca) +
+          "&destination=" +
+          encodeURIComponent(maisProxima.endereco) +
+          "&travelmode=driving";
+
+        cepResult.innerHTML = `
+          <div class="cep-result-card">
+            <div class="eyebrow">Unidade mais próxima</div>
+            <h3>${maisProxima.nome}</h3>
+            <p class="cep-distance">
+              Aproximadamente ${maisProxima.distancia.toLocaleString(
+                "pt-BR",
+                { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+              )} km em linha reta
+            </p>
+            <p>${maisProxima.endereco}</p>
+            <a class="btn" href="${rota}"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-route"></i>
+              Ver rota no Google Maps
+            </a>
+          </div>
+        `;
+      } catch (erro) {
+        cepResult.innerHTML = `
+          <p class="cep-error">
+            Não foi possível localizar esse CEP agora.
+            Confira os números e tente novamente.
+          </p>
+        `;
+      } finally {
+        cepButton.disabled = false;
+        cepButton.textContent = "Encontrar unidade";
+      }
+    });
+
 
   <script>
     const toggle = document.getElementById('menuToggle');
