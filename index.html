@@ -1621,32 +1621,82 @@
           }))
           .sort((a, b) => a.distancia - b.distancia);
 
-        const maisProxima = ranking[0];
 
-        const rota = "https://www.google.com/maps/dir/?api=1&origin=" +
-          encodeURIComponent(enderecoBusca) +
-          "&destination=" +
-          encodeURIComponent(maisProxima.endereco) +
-          "&travelmode=driving";
+const maisProxima = ranking[0];
 
-        cepResult.innerHTML = `
-          <div class="cep-result-card">
-            <div class="eyebrow">Unidade mais próxima</div>
-            <h3>${maisProxima.nome}</h3>
-            <p class="cep-distance">
-              Aproximadamente ${maisProxima.distancia.toLocaleString(
-                "pt-BR",
-                { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-              )} km em linha reta
-            </p>
-            <p>${maisProxima.endereco}</p>
-            <a class="btn" href="${rota}"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-route"></i>
-              Ver rota no Google Maps
-            </a>
-          </div>
-        `;
+const listaUnidades = ranking.map((unidade, index) => {
+  const rota = "https://www.google.com/maps/dir/?api=1&origin=" +
+    encodeURIComponent(enderecoBusca) +
+    "&destination=" +
+    encodeURIComponent(unidade.endereco) +
+    "&travelmode=driving";
+
+  const distancia = unidade.distancia.toLocaleString("pt-BR", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1
+  });
+
+  return `
+    <div class="cep-unit-item">
+      <div class="cep-unit-heading">
+        <span class="cep-unit-number">${index + 1}</span>
+
+        <div>
+          <h4>${unidade.nome}</h4>
+          ${index === 0
+            ? '<span class="cep-nearest-label">Mais próxima</span>'
+            : ''}
+        </div>
+
+        <span class="cep-unit-distance">${distancia} km</span>
+      </div>
+
+      <p>${unidade.endereco}</p>
+
+      <a class="cep-unit-route"
+         href="${rota}"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fa-solid fa-route"></i>
+        Ver rota no Google Maps
+      </a>
+    </div>
+  `;
+}).join("");
+
+cepResult.innerHTML = `
+  <div class="cep-result-card">
+    <div class="eyebrow">Unidade mais próxima</div>
+    <h3>${maisProxima.nome}</h3>
+
+    <p class="cep-distance">
+      Aproximadamente ${maisProxima.distancia.toLocaleString("pt-BR", {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      })} km em linha reta
+    </p>
+
+    <p>${maisProxima.endereco}</p>
+  </div>
+
+  <div class="cep-all-units">
+    <h3>Todas as unidades</h3>
+
+    <p class="cep-units-description">
+      Escolha a unidade mais conveniente para você.
+      A lista está organizada da mais próxima para a mais distante.
+    </p>
+
+    <div class="cep-unit-list">
+      ${listaUnidades}
+    </div>
+
+    <p class="cep-distance-note">
+      Distâncias aproximadas em linha reta, não pela estrada.
+    </p>
+  </div>
+`;
+
       } catch (erro) {
         cepResult.innerHTML = `
           <p class="cep-error">
