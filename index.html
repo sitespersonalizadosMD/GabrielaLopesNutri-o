@@ -1075,6 +1075,148 @@
   }
 }
 
+    
+/* ATENDIMENTO ONLINE */
+
+.online-section {
+  padding: 82px 0;
+  background: #702536;
+  color: #fffdf9;
+}
+
+.online-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.online-copy .eyebrow {
+  color: #e8c9b9;
+}
+
+.online-copy h2 {
+  max-width: 600px;
+  margin: 14px 0 20px;
+  color: #fffdf9;
+}
+
+.online-copy > p {
+  max-width: 570px;
+  color: #f3e7da;
+  line-height: 1.8;
+}
+
+.online-benefits {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.online-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fffdf9;
+}
+
+.online-benefits i {
+  width: 22px;
+  color: #e8c9b9;
+  text-align: center;
+}
+
+.online-btn {
+  background: #fffdf9;
+  color: #702536;
+  border-color: #fffdf9;
+}
+
+.online-btn:hover {
+  background: #f3e7da;
+  color: #702536;
+}
+
+.online-visual {
+  padding: 38px;
+  border: 1px solid #a86c76;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #853748, #5c1d2b);
+  box-shadow: 0 22px 55px #32101935;
+}
+
+.online-icon {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 24px;
+  border-radius: 22px;
+  background: #f3e7da;
+  color: #702536;
+  font-size: 2.2rem;
+}
+
+.online-tag {
+  color: #e8c9b9;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.online-visual h3 {
+  margin: 14px 0;
+  color: #fffdf9;
+  font-size: 1.8rem;
+}
+
+.online-visual > p {
+  color: #f3e7da;
+  line-height: 1.8;
+}
+
+.online-decoration {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff35;
+  color: #fffdf9;
+  font-size: .9rem;
+}
+
+.online-decoration i {
+  color: #e8c9b9;
+}
+
+@media (max-width: 680px) {
+  .online-section {
+    padding: 62px 0;
+  }
+
+  .online-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .online-visual {
+    padding: 28px;
+  }
+
+  .online-copy h2 {
+    font-size: 2.3rem;
+  }
+
+  .online-btn {
+    width: 100%;
+  }
+}
+
+
   </style>
 </head>
 
@@ -1239,6 +1381,72 @@
 
       </div>
     </section>
+
+    
+<!-- ATENDIMENTO ONLINE -->
+<section class="online-section" id="atendimento-online">
+  <div class="container online-grid">
+
+    <div class="online-copy reveal">
+      <div class="eyebrow">Atendimento online</div>
+
+      <h2>Sua consulta, onde você estiver.</h2>
+
+      <p>
+        Cuide da sua alimentação com acompanhamento nutricional
+        individualizado, sem precisar sair de casa.
+        Mais praticidade para incluir o cuidado com a sua saúde
+        na sua rotina.
+      </p>
+
+      <ul class="online-benefits">
+        <li>
+          <i class="fa-solid fa-video"></i>
+          Atendimento por videochamada
+        </li>
+        <li>
+          <i class="fa-solid fa-house"></i>
+          Mais comodidade, onde você estiver
+        </li>
+        <li>
+          <i class="fa-solid fa-heart"></i>
+          Orientação individualizada e acolhedora
+        </li>
+      </ul>
+
+      <a
+        class="btn online-btn"
+        href="https://wa.me/5521990491428?text=Ol%C3%A1%2C%20Gabriela!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20nutricional%20online."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Quero agendar online
+      </a>
+    </div>
+
+    <div class="online-visual reveal">
+      <div class="online-icon">
+        <i class="fa-solid fa-laptop-medical"></i>
+      </div>
+
+      <span class="online-tag">Cuidado que se adapta a você</span>
+
+      <h3>Seu bem-estar não precisa esperar.</h3>
+
+      <p>
+        Dê o primeiro passo para uma rotina alimentar
+        mais alinhada às suas necessidades.
+      </p>
+
+      <div class="online-decoration">
+        <i class="fa-solid fa-heart"></i>
+        <span>Nutrição com acolhimento</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     
     <!-- CONSULTÓRIO MAIS PRÓXIMO -->
