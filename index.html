@@ -758,6 +758,27 @@
   font-size: .82rem;
 }
 
+    
+.footer-credit {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #f3e7da;
+  opacity: 0.9;
+}
+
+.footer-credit a {
+  color: #fffdf9;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-credit a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+
 @media (max-width: 680px) {
   .footer {
     padding: 30px 0 18px;
@@ -1808,9 +1829,22 @@
 
   </div>
 
+ 
   <div class="container footer-bottom">
-    © <span id="year"></span> Gabriela Lopes. Todos os direitos reservados.
+    <div>
+      © <span id="year"></span> Gabriela Lopes. Todos os direitos reservados.
+    </div>
+
+    <div class="footer-credit">
+      Site desenvolvido por
+      <a href="https://www.instagram.com/mdr_sites/"
+         target="_blank"
+         rel="noopener noreferrer">
+        MDR Sites
+      </a>
+    </div>
   </div>
+
 </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
